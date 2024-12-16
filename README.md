@@ -41,7 +41,7 @@ myString.splice(2, 0, "c");
 ## Specification
 
 [Ecmarkup source](./spec.emu)  
-[HTML](./build/index.html)
+[HTML](https://zion-off.github.io/proposal-string-splice/)
 
 ## Acknowledgements
 
