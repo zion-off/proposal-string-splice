@@ -8,65 +8,43 @@ title: String.prototype.splice
 stage: 0
 contributors: zion-off
 </pre>
-
 <emu-clause id="sec-string-prototype-splice">
-  <h1>String.prototype.splice ( start, deleteCount, ...items )</h1>
+  <h1>String.prototype.splice ( _start_, _deleteCount_, ..._items_ )</h1>
   <p>The `splice` method modifies the string by removing or replacing existing characters and/or adding new characters.</p>
-  
   <emu-clause id="sec-string-prototype-splice-description">
     <h1>Description</h1>
-    <p>When the `splice` method is called with an optional `start` index, optional `deleteCount`, and zero or more `items`, the following steps are taken:</p>
+    <p>When the `splice` method is called with an optional *start* index, optional *deleteCount*, and zero or more *items*, the following steps are taken:</p>
   </emu-clause>
-
   <emu-clause id="sec-string-prototype-splice-params">
     <h1>Parameters</h1>
     <dl>
+      <dt>`stringValue`</dt>
+      <dd>The string to be modified.</dd>
       <dt>`start`</dt>
-      <dd>The index at which to start changing the string. If negative, it will count from the end of the string.</dd>
-      
+      <dd>The index at which to start changing the string. If negative, it will count from the end of the string. If omitted, defaults to 0.</dd>
       <dt>`deleteCount`</dt>
-      <dd>An integer indicating the number of characters to remove. If omitted, all characters from `start` to the end of the string will be removed.</dd>
-      
+      <dd>An integer indicating the number of characters to remove. If omitted, all characters from *start* to the end of the string will be removed.</dd>
       <dt>`...items`</dt>
-      <dd>The elements to add to the string, beginning from `start`.</dd>
+      <dd>The elements to add to the string, beginning from *start*.</dd>
     </dl>
   </emu-clause>
-
   <emu-clause id="sec-string-prototype-splice-abstract-operation">
-    <h1>Runtime Semantics: StringSplice ( O, start, deleteCount, ...items )</h1>
+    <h1>Runtime Semantics: StringSplice ( . . . )</h1>
     <emu-alg>
-      1. Let _str_ be ? ToString(_O_).
-      1. Let _len_ be the length of _str_.
-      1. Let _relativeStart_ be ? ToInteger(_start_).
-      1. Let _actualStart_ be the result of normalizing _relativeStart_ such that an out-of-bounds value is clamped to the range of valid indices.
-        1. If _relativeStart_ is negative, let _actualStart_ be max(_len_ + _relativeStart_, 0).
-        1. If _relativeStart_ is positive, let _actualStart_ be min(_relativeStart_, _len_).
-      1. Let _actualDeleteCount_ be ? ToInteger(_deleteCount_).
-      1. Let _resultLength_ be _len_ - _actualDeleteCount_ + the number of _items_.
-      1. Let _result_ be the string consisting of:
-        1. The substring from index 0 to _actualStart_ (exclusive)
-        1. All _items_, concatenated in order
-        1. The substring from index _actualStart_ + _actualDeleteCount_ to the end of the original string
-      1. Return _result_.
+      1. Let *str* be ? ToString(*stringValue*).
+      1. Let *len* be the length of *str*.
+      1. Let *relativeStart* be 0.
+      1. If *start* is not undefined, set *relativeStart* to ? ToIntegerOrInfinity(*start*).
+      1. Let *actualStart* be the result of:
+        1. If *relativeStart* is negative, compute max(*len* + *relativeStart*, 0).
+        1. Otherwise, compute min(*relativeStart*, *len*).
+      1. Let *actualDeleteCount* be *len* - *actualStart*.
+      1. If *deleteCount* is not undefined, set *actualDeleteCount* to ? ToIntegerOrInfinity(*deleteCount*).
+      1. Let *result* be the string consisting of:
+        1. The substring from index 0 to *actualStart* (exclusive).
+        1. The substring from *actualStart* + *actualDeleteCount* to the end of the string.
+        1. All *items*, concatenated in order.
+      1. Return *result*.
     </emu-alg>
   </emu-clause>
-
-  <emu-clause id="sec-string-prototype-splice-examples">
-    <h1>Examples</h1>
-    <emu-note>
-      <p>Here are some usage examples:</p>
-      <pre><code class="javascript">
-let str = "Hello world";
-str = str.splice(5, 0, "beautiful "); 
-// str is now "Hello beautiful world"
-      </code></pre>
-    </emu-note>
-  </emu-clause>
-</emu-clause>
-
-<emu-clause id="sec-properties-of-string-prototype">
-  <h1>Properties of the String Prototype Object</h1>
-  <emu-alg>
-    1. Add the `splice` method to `String.prototype`
-  </emu-alg>
 </emu-clause>

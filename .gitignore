@@ -42,5 +42,8 @@ package-lock.json
 npm-shrinkwrap.json
 pnpm-lock.yaml
 
+# Build directory
+build
+
 # OS files
 .DS_Store

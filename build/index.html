@@ -1,10 +1,9 @@
 <!doctype html>
-<head><meta charset="utf-8"><meta property="og:image" content="https://tc39.es/ecmarkup/ecma-logo.png"><meta property="og:title" content="String.prototype.splice"><meta property="og:description" content="String.prototype.splice ( start, deleteCount, ...items )
+<head><meta charset="utf-8"><meta property="og:image" content="https://tc39.es/ecmarkup/ecma-logo.png"><meta property="og:title" content="String.prototype.splice"><meta property="og:description" content="String.prototype.splice ( _start_, _deleteCount_, ..._items_ )
   The `splice` method modifies the string by removing or replacing existing characters and/or adding new characters.
   
-  
     Description
-    When the `splice` method is called with an optional `start` index, optional `deleteCount`, and ze">
+    When the `splice` method is called with an optional *start* index, optional *deleteCount*, and">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/base16/solarized-light.min.css"><link rel="stylesheet" href="./spec.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
@@ -1615,7 +1614,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let sdoMap = JSON.parse(`{}`);
-let biblio = JSON.parse(`{"refsByClause":{},"entries":[{"type":"clause","id":"sec-string-prototype-splice-description","titleHTML":"Description","number":"1.1"},{"type":"clause","id":"sec-string-prototype-splice-params","titleHTML":"Parameters","number":"1.2"},{"type":"clause","id":"sec-string-prototype-splice-abstract-operation","titleHTML":"Runtime Semantics: StringSplice ( O, start, deleteCount, ...items )","number":"1.3"},{"type":"clause","id":"sec-string-prototype-splice-examples","titleHTML":"Examples","number":"1.4"},{"type":"clause","id":"sec-string-prototype-splice","titleHTML":"String.prototype.splice ( start, deleteCount, ...items )","number":"1"},{"type":"clause","id":"sec-properties-of-string-prototype","titleHTML":"Properties of the String Prototype Object","number":"2"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
+let biblio = JSON.parse(`{"refsByClause":{},"entries":[{"type":"clause","id":"sec-string-prototype-splice-description","titleHTML":"Description","number":"1.1"},{"type":"clause","id":"sec-string-prototype-splice-params","titleHTML":"Parameters","number":"1.2"},{"type":"clause","id":"sec-string-prototype-splice-abstract-operation","titleHTML":"Runtime Semantics: StringSplice ( . . . )","number":"1.3"},{"type":"clause","id":"sec-string-prototype-splice","title":"String.prototype.splice ( start, deleteCount, ...items )","titleHTML":"String.prototype.splice ( <var>start</var>, <var>deleteCount</var>, ...<var>items</var> )","number":"1"},{"type":"clause","id":"sec-copyright-and-software-license","title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A"}]}`);
 ;let usesMultipage = false</script><style>/* IBM Plex fonts (Latin subset) have been downloaded from Google Fonts and modified to add support back in for the `zero` substitution (slashed zeroes) */
 
 /* https://fonts.googleapis.com/css2?family=IBM%20Plex%20Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap */
@@ -3292,50 +3291,31 @@ emu-intro {
 </ul></div><div id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; stroke:currentColor" viewBox="0 0 120 120" width="54" height="54">
       <title>Menu</title>
       <path stroke-width="10" stroke-linecap="round" d="M30,60 h60  M30,30 m0,5 h60  M30,90 m0,-5 h60"></path>
-    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-string-prototype-splice" title="String.prototype.splice ( start, deleteCount, ...items )"><span class="secnum">1</span> String.prototype.splice ( start, deleteCount, ...items )</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-description" title="Description"><span class="secnum">1.1</span> Description</a></li><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-params" title="Parameters"><span class="secnum">1.2</span> Parameters</a></li><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-abstract-operation" title="Runtime Semantics: StringSplice ( O, start, deleteCount, ...items )"><span class="secnum">1.3</span> RS: StringSplice ( O, start, deleteCount, ...items )</a></li><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-examples" title="Examples"><span class="secnum">1.4</span> Examples</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-properties-of-string-prototype" title="Properties of the String Prototype Object"><span class="secnum">2</span> Properties of the String Prototype Object</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 0 Draft / December 16, 2024</h1><h1 class="title">String.prototype.splice</h1>
-
+    </svg></div><div id="menu-spacer" class="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins<button class="unpin-all">clear</button></div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">+</span><a href="#sec-string-prototype-splice" title="String.prototype.splice ( start, deleteCount, ...items )"><span class="secnum">1</span> String.prototype.splice ( <var>start</var>, <var>deleteCount</var>, ...<var>items</var> )</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-description" title="Description"><span class="secnum">1.1</span> Description</a></li><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-params" title="Parameters"><span class="secnum">1.2</span> Parameters</a></li><li><span class="item-toggle-none"></span><a href="#sec-string-prototype-splice-abstract-operation" title="Runtime Semantics: StringSplice ( . . . )"><span class="secnum">1.3</span> RS: StringSplice ( . . . )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version">Stage 0 Draft / December 16, 2024</h1><h1 class="title">String.prototype.splice</h1>
 <emu-clause id="sec-string-prototype-splice">
-  <h1><span class="secnum">1</span> String.prototype.splice ( start, deleteCount, ...items )</h1>
+  <h1><span class="secnum">1</span> String.prototype.splice ( <var>start</var>, <var>deleteCount</var>, ...<var>items</var> )</h1>
   <p>The <code>splice</code> method modifies the string by removing or replacing existing characters and/or adding new characters.</p>
-  
   <emu-clause id="sec-string-prototype-splice-description">
     <h1><span class="secnum">1.1</span> Description</h1>
-    <p>When the <code>splice</code> method is called with an optional <code>start</code> index, optional <code>deleteCount</code>, and zero or more <code>items</code>, the following steps are taken:</p>
+    <p>When the <code>splice</code> method is called with an optional <emu-val>start</emu-val> index, optional <emu-val>deleteCount</emu-val>, and zero or more <emu-val>items</emu-val>, the following steps are taken:</p>
   </emu-clause>
-
   <emu-clause id="sec-string-prototype-splice-params">
     <h1><span class="secnum">1.2</span> Parameters</h1>
     <dl>
+      <dt><code>stringValue</code></dt>
+      <dd>The string to be modified.</dd>
       <dt><code>start</code></dt>
-      <dd>The index at which to start changing the string. If negative, it will count from the end of the string.</dd>
-      
+      <dd>The index at which to start changing the string. If negative, it will count from the end of the string. If omitted, defaults to 0.</dd>
       <dt><code>deleteCount</code></dt>
-      <dd>An <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> indicating the number of characters to remove. If omitted, all characters from <code>start</code> to the end of the string will be removed.</dd>
-      
+      <dd>An <emu-xref href="#integer"><a href="https://tc39.es/ecma262/#integer">integer</a></emu-xref> indicating the number of characters to remove. If omitted, all characters from <emu-val>start</emu-val> to the end of the string will be removed.</dd>
       <dt><code>...items</code></dt>
-      <dd>The elements to add to the string, beginning from <code>start</code>.</dd>
+      <dd>The elements to add to the string, beginning from <emu-val>start</emu-val>.</dd>
     </dl>
   </emu-clause>
-
   <emu-clause id="sec-string-prototype-splice-abstract-operation">
-    <h1><span class="secnum">1.3</span> Runtime Semantics: StringSplice ( O, start, deleteCount, ...items )</h1>
-    <emu-alg><ol><li>Let <var>str</var> be ?&nbsp;<emu-xref aoid="ToString"><a href="https://tc39.es/ecma262/#sec-tostring">ToString</a></emu-xref>(<var>O</var>).</li><li>Let <var>len</var> be the length of <var>str</var>.</li><li>Let <var>relativeStart</var> be ?&nbsp;ToInteger(<var>start</var>).</li><li>Let <var>actualStart</var> be the result of normalizing <var>relativeStart</var> such that an out-of-bounds value is clamped to the range of valid indices.<ol><li>If <var>relativeStart</var> is negative, let <var>actualStart</var> be <emu-xref aoid="max"><a href="https://tc39.es/ecma262/#eqn-max">max</a></emu-xref>(<var>len</var> + <var>relativeStart</var>, 0).</li><li>If <var>relativeStart</var> is positive, let <var>actualStart</var> be <emu-xref aoid="min"><a href="https://tc39.es/ecma262/#eqn-min">min</a></emu-xref>(<var>relativeStart</var>, <var>len</var>).</li></ol></li><li>Let <var>actualDeleteCount</var> be ?&nbsp;ToInteger(<var>deleteCount</var>).</li><li>Let <var>resultLength</var> be <var>len</var> - <var>actualDeleteCount</var> + the number of <var>items</var>.</li><li>Let <var>result</var> be the string consisting of:<ol><li>The <emu-xref href="#substring"><a href="https://tc39.es/ecma262/#substring">substring</a></emu-xref> from index 0 to <var>actualStart</var> (exclusive)</li><li>All <var>items</var>, concatenated in order</li><li>The <emu-xref href="#substring"><a href="https://tc39.es/ecma262/#substring">substring</a></emu-xref> from index <var>actualStart</var> + <var>actualDeleteCount</var> to the end of the original string</li></ol></li><li>Return <var>result</var>.</li></ol></emu-alg>
+    <h1><span class="secnum">1.3</span> Runtime Semantics: StringSplice ( . . . )</h1>
+    <emu-alg><ol><li>Let <emu-val>str</emu-val> be ?&nbsp;<emu-xref aoid="ToString"><a href="https://tc39.es/ecma262/#sec-tostring">ToString</a></emu-xref>(<emu-val>stringValue</emu-val>).</li><li>Let <emu-val>len</emu-val> be the length of <emu-val>str</emu-val>.</li><li>Let <emu-val>relativeStart</emu-val> be 0.</li><li>If <emu-val>start</emu-val> is not undefined, set <emu-val>relativeStart</emu-val> to ?&nbsp;<emu-xref aoid="ToIntegerOrInfinity"><a href="https://tc39.es/ecma262/#sec-tointegerorinfinity">ToIntegerOrInfinity</a></emu-xref>(<emu-val>start</emu-val>).</li><li>Let <emu-val>actualStart</emu-val> be the result of:<ol><li>If <emu-val>relativeStart</emu-val> is negative, compute <emu-xref aoid="max"><a href="https://tc39.es/ecma262/#eqn-max">max</a></emu-xref>(<emu-val>len</emu-val> + <emu-val>relativeStart</emu-val>, 0).</li><li>Otherwise, compute <emu-xref aoid="min"><a href="https://tc39.es/ecma262/#eqn-min">min</a></emu-xref>(<emu-val>relativeStart</emu-val>, <emu-val>len</emu-val>).</li></ol></li><li>Let <emu-val>actualDeleteCount</emu-val> be <emu-val>len</emu-val> - <emu-val>actualStart</emu-val>.</li><li>If <emu-val>deleteCount</emu-val> is not undefined, set <emu-val>actualDeleteCount</emu-val> to ?&nbsp;<emu-xref aoid="ToIntegerOrInfinity"><a href="https://tc39.es/ecma262/#sec-tointegerorinfinity">ToIntegerOrInfinity</a></emu-xref>(<emu-val>deleteCount</emu-val>).</li><li>Let <emu-val>result</emu-val> be the string consisting of:<ol><li>The <emu-xref href="#substring"><a href="https://tc39.es/ecma262/#substring">substring</a></emu-xref> from index 0 to <emu-val>actualStart</emu-val> (exclusive).</li><li>The <emu-xref href="#substring"><a href="https://tc39.es/ecma262/#substring">substring</a></emu-xref> from <emu-val>actualStart</emu-val> + <emu-val>actualDeleteCount</emu-val> to the end of the string.</li><li>All <emu-val>items</emu-val>, concatenated in order.</li></ol></li><li>Return <emu-val>result</emu-val>.</li></ol></emu-alg>
   </emu-clause>
-
-  <emu-clause id="sec-string-prototype-splice-examples">
-    <h1><span class="secnum">1.4</span> Examples</h1>
-    <emu-note><span class="note">Note</span><div class="note-contents">
-      <p>Here are some usage examples:</p>
-      <pre><code class="javascript hljs"><span class="hljs-keyword">let</span> str = <span class="hljs-string">"Hello world"</span>;
-str = str.<span class="hljs-title function_">splice</span>(<span class="hljs-number">5</span>, <span class="hljs-number">0</span>, <span class="hljs-string">"beautiful "</span>); 
-<span class="hljs-comment">// str is now "Hello beautiful world"</span></code></pre>
-    </div></emu-note>
-  </emu-clause>
-</emu-clause>
-
-<emu-clause id="sec-properties-of-string-prototype">
-  <h1><span class="secnum">2</span> Properties of the String Prototype Object</h1>
-  <emu-alg><ol><li>Add the <code>splice</code> method to <code>String.prototype</code></li></ol></emu-alg>
 </emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span> Copyright &amp; Software License</h1>
       
